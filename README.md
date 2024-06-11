@@ -57,6 +57,8 @@ Now, this depends on your desktop, add a shortcut for the "recall-ui" app to i.e
 
 Finally enter "systemctl --user start recall.timer" and your ready!
 
+# Acknowledgments
 
+This project was done while the [Linux am Dienstag](https://linux-am-dienstag.de) videoconference on 11.6.2024 just for fun and pleasure. 
 
 
