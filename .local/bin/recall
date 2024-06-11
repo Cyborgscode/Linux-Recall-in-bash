@@ -1,0 +1,30 @@
+#!/bin/bash
+
+BILDER=$(cat $HOME/.config/recall/path)
+
+if [ "$BILDER" == "" ]; then 
+	exit 1;
+fi 
+
+mkdir -p $BILDER
+
+SIZE=$(du -s $BILDER/|awk '{print $1;}')
+
+if [ $SIZE -gt 1000000 ]; then 
+	DNAME=$(ls -d $BILDER/*png 2>&1 | head -n 1 )
+	if [[ "$DNAME" =~ ^/ ]]; then 
+		rm -f $DNAME
+	fi
+fi 
+
+find $BILDER -iname "*txt" -ctime +180 -delete
+
+WLISTE=$(wmctrl -l | grep -c -E -f  $HOME/.config/recall/exclude )
+
+if [ $WLISTE -eq 0 ]; then
+
+	FILENAME=$(flameshot full -p $BILDER/ 2>&1 | sed -e "s/flameshot: info: Capture saved as //g")
+	tesseract $FILENAME $FILENAME
+	
+fi
+

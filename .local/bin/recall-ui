@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BILDER=$(cat $HOME/.config/recall/path)
+
+if [ "$BILDER" == "" ]; then 
+	exit 1;
+fi 
+
+SUCHE=$(zenity --entry --text="RECALL Suchbegriff" --entry-text="" --title="Suchbegriff")
+
+TREFFER=$(grep -l -i "$SUCHE" $BILDER/*txt| sed -e "s/\.txt$//g")
+
+eog -n -w -s $TREFFER
+
+
+
