@@ -61,4 +61,4 @@ Finally enter "systemctl --user start recall.timer" and your ready!
 
 This project was done while the [Linux am Dienstag](https://linux-am-dienstag.de) videoconference on 11.6.2024 just for fun and pleasure. 
 
-
+This project is 100% local, it does not store or process files in any cloud service.
