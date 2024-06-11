@@ -17,6 +17,7 @@ If you wanne have a different timeframe or different volume, you need to change 
 - flameshot
 - tesseract
 - zenity
+- eyeofgnome
 - wmctrl
 - systemd
 
