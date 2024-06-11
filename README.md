@@ -55,7 +55,7 @@ save it. If any of those windows are open, and this includes firefox tabs in fro
 
 Now, this depends on your desktop, add a shortcut for the "recall-ui" app to i.e. SUPER+R , so that you can start the search request.
 
-Finally enter "systemctl --user start recall.timer" and your ready!
+Finally enter "systemctl --user enable --now recall.timer" and your ready!
 
 # Acknowledgments
 
