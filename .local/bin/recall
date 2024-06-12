@@ -1,30 +1,43 @@
 #!/bin/bash
 
-BILDER=$(cat $HOME/.config/recall/path)
+CONFIG=$HOME/.config/recall/config
 
-if [ "$BILDER" == "" ]; then 
+if [ ! -e $CONFIG ]; then 
+
+	echo "# needs to be an absolute path" > $CONFIG
+	echo "STORAGELOCATION=$HOME/Bilder/recall" >> $CONFIG
+	echo "# size in byte" >> $CONFIG
+	echo "CACHEMAXSIZE=1073741824" >> $CONFIG
+	echo "# autodelete time in days" >> $CONFIG
+	echo "AUTODELETETIMEFRAME=180" >> $CONFIG
+
+fi
+
+source $CONFIG
+
+
+if [ "$STORAGELOCATION" == "" ]; then 
 	exit 1;
 fi 
 
-mkdir -p $BILDER
+mkdir -p $STORAGELOCATION
 
-SIZE=$(du -s $BILDER/|awk '{print $1;}')
+SIZE=$(du -s $STORAGELOCATION/|awk '{print $1;}')
 
-if [ $SIZE -gt 1000000 ]; then 
-	DNAME=$(ls -d $BILDER/*png 2>&1 | head -n 1 )
+if [ $SIZE -gt $CACHEMAXSIZE ]; then 
+	DNAME=$(ls -d $STORAGELOCATION/*png 2>&1 | head -n 1 )
 	if [[ "$DNAME" =~ ^/ ]]; then 
 		rm -f $DNAME
 	fi
 fi 
 
-find $BILDER -iname "*txt" -ctime +180 -delete
+find $STORAGELOCATION -iname "*txt" -ctime +$AUTODELETETIMEFRAME -delete
 
 WLISTE=$(wmctrl -l | grep -c -E -f  $HOME/.config/recall/exclude )
 
 if [ $WLISTE -eq 0 ]; then
 
-	FILENAME=$(flameshot full -p $BILDER/ 2>&1 | sed -e "s/flameshot: info: Capture saved as //g")
+	FILENAME=$(flameshot full -p $STORAGELOCATION/ 2>&1 | sed -e "s/flameshot: info: Capture saved as //g")
 	tesseract $FILENAME $FILENAME
 	
 fi
-
