@@ -1,0 +1,6 @@
+# needs to be an absolute path
+STORAGELOCATION=/home/<username>/Bilder/recall
+# size in byte
+CACHEMAXSIZE=1073741824
+# autodelete time in days
+AUTODELETETIMEFRAME=180
