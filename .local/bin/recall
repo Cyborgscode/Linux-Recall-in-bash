@@ -7,7 +7,7 @@ if [ ! -e $CONFIG ]; then
 	echo "# needs to be an absolute path" > $CONFIG
 	echo "STORAGELOCATION=$HOME/Bilder/recall" >> $CONFIG
 	echo "# size in byte" >> $CONFIG
-	echo "CACHEMAXSIZE=1073741824" >> $CONFIG
+	echo "CACHEMAXSIZE=10737418240" >> $CONFIG
 	echo "# autodelete time in days" >> $CONFIG
 	echo "AUTODELETETIMEFRAME=180" >> $CONFIG
 
