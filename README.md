@@ -7,7 +7,7 @@ RECALL Functionality for Linux Desktops in Bash
 Recall will take a screenshot, if no excluded window is open, every 30 seconds and stores the image into your choosen Image path.
 It will use tesseract to OCR the image content and store it in a txt file in the same directory.
 
-If the size of the directory is > 1G it starts deleting the oldest image. 
+If the size of the directory is > 10G it starts deleting the oldest image. 
 If a textfile is older than 180 days they will be deleted too.
 
 If you wanne have a different timeframe or different volume, you need to change the "recall" script (for now).
