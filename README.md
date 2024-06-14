@@ -60,7 +60,7 @@ Finally enter "systemctl --user enable --now recall.timer" and your ready!
 
 # Integrations
 
-This project is now integrated into the Personal Voice Assistant (PVA) aka Carola available in the same user repo or via precompiled RPM files for Fedora.
+This project is now integrated into the Personal Voice Assistant (PVA) aka Carola. PVA is available in the same user repo or via precompiled RPM files for Fedora.
 
 
 # Acknowledgments
