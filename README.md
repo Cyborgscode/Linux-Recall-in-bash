@@ -4,7 +4,7 @@ RECALL Functionality for Linux Desktops in Bash
 
 # What it does
 
-Recall will take a screenshot, if no excluded window is open, every 10 seconds and stores the image into your choosen Image path.
+Recall will take a screenshot, if no excluded window is open, every 30 seconds and stores the image into your choosen Image path.
 It will use tesseract to OCR the image content and store it in a txt file in the same directory.
 
 If the size of the directory is > 1G it starts deleting the oldest image. 
