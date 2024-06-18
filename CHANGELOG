@@ -1,0 +1,5 @@
+- version 0.2 
+
+switched to global systemd user service
+changed PNG to JPG fileformat for smaller storagefiles
+enabled systemwide user preset for recall ( use 'systemctl --user disable recall.*' if you need to disable it )
