@@ -1,0 +1,6 @@
+#
+# Linux Recall in Bash
+#
+
+enable recall.timer
+
