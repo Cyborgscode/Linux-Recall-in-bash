@@ -20,17 +20,17 @@ If you wanne have a different timeframe or different volume, you need to change 
 - eyeofgnome
 - wmctrl
 - systemd
+- ImageMagick / GraphicsMagic
 
-# How to Install
+# How to Installit manually
 
 ```
-mv recall and recall-ui to .local/bin/
-chmod 700 .local/bin/recall*
+mv recall and recall-ui to /usr/sbin/
+chmod 700 /usr/sbin/recall*
 ```
 
-mv recall.timer and recall.service to .config/systemd/user/
-
-edit recall.service and change the username to YOUR username
+mv recall.timer and recall.service to /lib/systemd/user/
+mv 97-recall.preset to /lib/systemd/user-preset/
 
 edit .config/recall/config to the path you want the recall images saved, adjust the timeframe for caching and max. cachesize.
 change or edit .config/recall/exclude to either a completly empty file or add line-by-line the windowtitles form wmctrl -l i.e.
