@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer für RECALL
+
+[Timer]
+OnCalendar=*-*-* *:*:0/30
+
+[Install]
+WantedBy=timers.target
