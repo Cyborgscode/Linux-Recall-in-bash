@@ -1,7 +1,0 @@
-[Unit]
-DefaultDependencies=no
-Description=Linux am Dienstag RECALL Experiment
-
-[Service]
-Type=oneshot
-ExecStart=/home/exampleusername/.local/bin/recall
