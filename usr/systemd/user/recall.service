@@ -1,0 +1,7 @@
+[Unit]
+DefaultDependencies=no
+Description=Linux am Dienstag RECALL Experiment
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/recall
