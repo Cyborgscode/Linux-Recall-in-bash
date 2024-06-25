@@ -1,0 +1,61 @@
+#!/bin/bash
+
+CONFIG=$HOME/.config/recall/config
+
+if [ ! -e $CONFIG ]; then 
+
+	echo "# needs to be an absolute path" > $CONFIG
+	echo "STORAGELOCATION=$HOME/Bilder/recall" >> $CONFIG
+	echo "# size in byte" >> $CONFIG
+	echo "CACHEMAXSIZE=1073741824" >> $CONFIG
+	echo "# autodelete time in days" >> $CONFIG
+	echo "AUTODELETETIMEFRAME=180" >> $CONFIG
+
+fi
+
+source $CONFIG
+
+
+if [ "$STORAGELOCATION" == "" ]; then 
+	exit 1;
+fi 
+
+if [ -e $STORAGELOCATION ]; then
+
+	size=$(du -sh $STORAGELOCATION| awk '{print $1;}')
+	einheit=$(echo "$size"| sed -e "s/[0-9,]*//g")
+	
+	size=$(echo "$size" | sed -e "s/[a-zA-Z]*//g")
+	
+	case $einheit in
+	
+		"K")
+			gsay "Das Cache ist $size KiloByte groß" &
+			notify-send --urgency=normal "Das Cache ist $size KiloByte groß"
+			;;
+		"M")
+			gsay "Das Cache ist $size MegaByte groß" &
+			notify-send --urgency=normal "Das Cache ist $size MegaByte groß"
+			;;
+		"G")
+			gsay "Das Cache ist $size GigaByte groß" &
+			notify-send --urgency=normal "Das Cache ist $size GigaByte groß"
+			;;
+		"T")
+			gsay "Das Cache ist $size TerraByte groß"&
+			notify-send --urgency=normal "Das Cache ist $size TerraByte groß"
+			;;
+		*)
+			gsay "Das Cache ist $size Bytes groß" &
+			notify-send --urgency=normal "Das Cache ist $size Bytes groß"
+
+			;;
+	esac			
+
+else 
+	gsay "Cache wurde nicht angelegt"
+
+fi
+
+
+
