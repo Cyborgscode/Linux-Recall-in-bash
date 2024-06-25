@@ -1,3 +1,8 @@
+- version 0.3
+
+added trayicon for desktop
+added cache scripts
+
 - version 0.2 
 
 switched to global systemd user service
