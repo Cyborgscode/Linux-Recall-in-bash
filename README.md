@@ -25,7 +25,7 @@ If you wanne have a different timeframe or different volume, you need to change 
 - notify-send
 - python for trayicon
 
-# How to Installit manually
+# How to Install it manually
 
 ```
 mv recall recall-* to /usr/sbin/
