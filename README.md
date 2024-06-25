@@ -21,12 +21,16 @@ If you wanne have a different timeframe or different volume, you need to change 
 - wmctrl
 - systemd
 - ImageMagick / GraphicsMagic
+- gtts (optional)
+- notify-send
+- python for trayicon
 
 # How to Installit manually
 
 ```
-mv recall and recall-ui to /usr/sbin/
+mv recall recall-* to /usr/sbin/
 chmod 700 /usr/sbin/recall*
+mv recall.desktop /usr/share/applications/
 ```
 
 mv recall.timer and recall.service to /lib/systemd/user/
