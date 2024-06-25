@@ -1,0 +1,17 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Name=Recall Traymenu
+GenericName=Recall
+Name[de_DE]=Recall
+Comment=Linux-Recall-in-Bash
+Exec=/usr/sbin/recalltray.py
+Icon=gtk-media-record
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Network
+Keywords=recall
+X-Desktop-File-Install-Version=0.26
+X-GNOME-Autostart-enabled=true
