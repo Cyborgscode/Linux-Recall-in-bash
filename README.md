@@ -33,8 +33,10 @@ chmod 700 /usr/sbin/recall*
 mv recall.desktop /usr/share/applications/
 ```
 
+```
 mv recall.timer and recall.service to /lib/systemd/user/
 mv 97-recall.preset to /lib/systemd/user-preset/
+```
 
 edit .config/recall/config to the path you want the recall images saved, adjust the timeframe for caching and max. cachesize.
 change or edit .config/recall/exclude to either a completly empty file or add line-by-line the windowtitles form wmctrl -l i.e.
