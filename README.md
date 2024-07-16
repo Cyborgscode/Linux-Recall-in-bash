@@ -73,7 +73,13 @@ save it. If any of those windows are open, and this includes firefox tabs in fro
 
 Now, this depends on your desktop, add a shortcut for the "recall-ui" app to i.e. SUPER+R , so that you can start the search request.
 
-Finally enter "systemctl --user enable --now recall.timer" and your ready!
+Finally, start the Desktop TrayIcon APP and start up Recall from there:
+
+- active Recall: means, you enable it permanently and start it up.
+- start Recall: means, you just start it "for now" without automatic starts in the future.
+
+Please remember: if it's not running, it does not record anything you can "recall" ;)
+
 
 # Integrations
 
