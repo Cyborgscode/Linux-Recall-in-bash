@@ -25,6 +25,17 @@ If you wanne have a different timeframe or different volume, you need to change 
 - notify-send
 - python for trayicon
 
+# How to Install it for Fedora
+
+Install this [Repo](http://repo.linux-am-dienstag.de/pva.repo) i.e. by 
+
+```
+curl -L http://repo.linux-am-dienstag.de/pva.repo > /etc/yum.repos.d/linuxamdienstag.repo
+dnf makecache
+dnf install recall
+```
+
+
 # How to Install it manually
 
 ```
